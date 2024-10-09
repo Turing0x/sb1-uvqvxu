@@ -28,13 +28,13 @@ const Contact: React.FC<Props> = ({ language }) =>  {
           </div>
           <form className="w-full md:w-1/2 bg-white p-8 rounded-lg shadow-lg">
             <div className="mb-6">
-              <input className="w-full px-4 py-3 rounded-lg bg-gray-100 border-transparent focus:border-blue-500 focus:bg-white focus:ring-0" type="text" placeholder="Nombre" />
+              <input className="w-full px-4 py-3 rounded-lg bg-gray-100 border-transparent focus:border-blue-500 focus:bg-white focus:ring-0" type="text" placeholder={language === 'es' ? 'Nombre' : 'Name'}  />
             </div>
             <div className="mb-6">
-              <input className="w-full px-4 py-3 rounded-lg bg-gray-100 border-transparent focus:border-blue-500 focus:bg-white focus:ring-0" type="email" placeholder="Email" />
+              <input className="w-full px-4 py-3 rounded-lg bg-gray-100 border-transparent focus:border-blue-500 focus:bg-white focus:ring-0" type="email" placeholder={language === 'es' ? 'Correo electrónico' : 'Email'} />
             </div>
             <div className="mb-6">
-              <textarea className="w-full px-4 py-3 rounded-lg bg-gray-100 border-transparent focus:border-blue-500 focus:bg-white focus:ring-0" rows={5} placeholder="Mensaje"></textarea>
+              <textarea className="w-full px-4 py-3 rounded-lg bg-gray-100 border-transparent focus:border-blue-500 focus:bg-white focus:ring-0" rows={5} placeholder={language === 'es' ? 'Mensaje' : 'Message'}></textarea>
             </div>
             <button className="btn btn-primary w-full" type="button">
               {

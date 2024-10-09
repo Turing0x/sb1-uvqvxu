@@ -55,6 +55,5 @@ function AppWrapper() {
   );
 }
 
-createRoot(document.getElementById('root')!).render(
-  <AppWrapper />
-);
+const root = createRoot(document.getElementById('root')!);
+root.render(<AppWrapper />);
