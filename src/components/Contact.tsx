@@ -1,10 +1,16 @@
 import { Phone, Mail, MapPin } from 'lucide-react'
 
-const Contact = () => {
+interface Props {
+  language: 'en' | 'es';
+}
+
+const Contact: React.FC<Props> = ({ language }) =>  {
   return (
     <section id="contact" className="py-24 px-24 bg-gray-50">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-16 text-gray-800">Contáctenos</h2>
+        <h2 className="text-4xl font-bold text-center mb-16 text-gray-800">{
+          language === 'es' ? 'Contáctenos' : 'Contact Us'
+        }</h2>
         <div className="flex flex-col md:flex-row justify-around items-start">
           <div className="mb-12 md:mb-0 md:w-1/3">
             <div className="flex items-center mb-6">
@@ -31,7 +37,9 @@ const Contact = () => {
               <textarea className="w-full px-4 py-3 rounded-lg bg-gray-100 border-transparent focus:border-blue-500 focus:bg-white focus:ring-0" rows={5} placeholder="Mensaje"></textarea>
             </div>
             <button className="btn btn-primary w-full" type="button">
-              Enviar Mensaje
+              {
+                language === 'es' ? 'Enviar Mensaje' : 'Send Message'
+              }
             </button>
           </form>
         </div>

@@ -1,7 +1,11 @@
 import React from 'react'
 import { Globe } from 'lucide-react'
 
-const Footer = () => {
+interface Props {
+  language: 'en' | 'es';
+}
+
+const Footer: React.FC<Props> = ({ language }) =>  {
   return (
     <footer className="bg-gray-800 text-white py-12">
       <div className="container mx-auto px-4">
@@ -12,12 +16,20 @@ const Footer = () => {
           </div>
           <nav className="mb-6 md:mb-0">
             <ul className="flex space-x-6">
-              <li><a href="#services" className="hover:text-blue-400 transition duration-300">Servicios</a></li>
-              <li><a href="#categories" className="hover:text-blue-400 transition duration-300">Categorías</a></li>
-              <li><a href="#contact" className="hover:text-blue-400 transition duration-300">Contacto</a></li>
+              <li><a href="#services" className="hover:text-blue-400 transition duration-300">{
+                language === 'es' ? 'Servicios' : 'Services'
+              }</a></li>
+              <li><a href="#categories" className="hover:text-blue-400 transition duration-300">{
+                language === 'es' ? 'Categorías' : 'Categories'
+              }</a></li>
+              <li><a href="#contact" className="hover:text-blue-400 transition duration-300">{
+                language === 'es' ? 'Contacto' : 'Contact'
+              }</a></li>
             </ul>
           </nav>
-          <p>&copy; {new Date().getFullYear()} Marcel AL Productions. Todos los derechos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} {
+            language === 'es' ? 'Marcel AL Productions. Todos los derechos reservados.' : 'Marcel AL Productions. All rights reserved.'
+          }</p>
         </div>
       </div>
     </footer>
