@@ -41,27 +41,27 @@ const categories = [
 
 const Categories: React.FC<Props> = ({ language }) => {
   return (
-    <section id="categories" className="py-24 px-24 bg-white">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-16 text-gray-800">{
-          language === 'es' ? 'Categorías Especializadas' : 'Specialized Categories'
-        }</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+    <section id="categories" className="py-16 px-6 sm:px-8 md:px-12 lg:px-24 bg-white">
+      <div className="container mx-auto">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 sm:mb-16 text-gray-800">
+          {language === 'es' ? 'Categorías Especializadas' : 'Specialized Categories'}
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12">
           {categories.map((category, index) => (
-            <div key={index} className="bg-gray-50 p-8 rounded-lg shadow-lg transition duration-300 hover:shadow-xl">
+            <div key={index} className="bg-gray-50 p-6 sm:p-8 rounded-lg shadow-lg transition duration-300 hover:shadow-xl">
               <div className="flex items-center mb-6">
                 {category.icon}
-                <h3 className="text-2xl font-semibold ml-4 text-gray-800">{
-                  language === 'es' ? category.title.split('|')[0] : category.title.split('|')[1]
-                }</h3>
+                <h3 className="text-xl sm:text-2xl font-semibold ml-4 text-gray-800">
+                  {language === 'es' ? category.title.split('|')[0] : category.title.split('|')[1]}
+                </h3>
               </div>
               <ul className="space-y-3">
                 {category.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-start">
                     <span className="mr-2 mt-1 text-blue-600">•</span>
-                    <span className="text-gray-600">{
-                      language === 'es' ? feature.split('|')[0] : feature.split('|')[1]
-                    }</span>
+                    <span className="text-gray-600">
+                      {language === 'es' ? feature.split('|')[0] : feature.split('|')[1]}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -70,7 +70,8 @@ const Categories: React.FC<Props> = ({ language }) => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
+
 
 export default Categories
