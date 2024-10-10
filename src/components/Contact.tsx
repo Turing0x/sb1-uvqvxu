@@ -19,7 +19,7 @@ const Contact: React.FC<Props> = ({ language }) =>  {
             </div>
             <div className="flex items-center mb-6">
               <Mail className="w-6 h-6 mr-4 text-blue-600" />
-              <p className="text-gray-700">contact@marcelalproductions.com</p>
+              <p className="text-gray-700">erickcoll@marcelalproductions.com</p>
             </div>
             <div className="flex items-start">
               <MapPin className="w-6 h-6 mr-4 text-blue-600 mt-1" />
